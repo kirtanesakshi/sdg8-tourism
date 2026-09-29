@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG 8 - Sustainable Tourism Project</title>
+
+    <style>
+        * {box-sizing: border-box}
+        html { scroll-behavior: smooth;}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d111e;
+            color: #e2e8f0;
+            line-height: 1.6;}
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: #0d111e;
+            border-bottom: 2px solid #2a344d;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0; }
+
+        .logo {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;}
+
+        .logo span { color: #10b981; }
+
+        .subtitle {
+            color: #06b6d4;
+            font-size: 12px;
+            margin-top: 4px;
+            letter-spacing: 1px;}
+
+        nav { margin-top: 15px;}
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+            font-weight: bold;}
+
+        nav a:hover {
+            color: #10b981;
+            text-decoration: underline;}
+
+        /* GENERAL SECTION LAYOUT */
+        section {
+            padding: 50px 20px;
+            max-width: 950px;
+            margin: auto;}
+
+        .dark-section {
+            background-color: #121826;
+            border-top: 1px solid #2a344d;
+            border-bottom: 1px solid #2a344d;
+            width: 100%; }
+
+        .section-content {
+            max-width: 950px;
+            margin: auto;
+            padding: 50px 20px;}
+
+        .heading {
+            text-align: center;
+            margin-bottom: 35px;}
+
+        .heading span {
+            color: #06b6d4;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;}
+
+        .heading h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin: 8px 0; }
+
+        .heading p {
+            color: #94a3b8;
+            font-size: 14px; }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;}
+
+        .tag {
+            display: inline-block;
+            color: #10b981;
+            border: 1px solid #10b981;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            font-weight: bold; }
+
+        .hero h1 {
+            font-size: 38px;
+            margin: 10px 0;
+            color: #ffffff; }
+
+        .hero h1 span {
+            color: #10b981; }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 650px;
+            margin: 15px auto;
+            font-size: 15px; }
+
+        .buttons { margin-top: 25px; }
+
+        .button {
+            display: inline-block;
+            background-color: #10b981;
+            color: #0d111e;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px; }
+
+        .button:hover {background-color: #06b6d4;}
+
+        .button.dark {
+            background-color: #1a2238;
+            color: #ffffff;
+            border: 1px solid #2a344d; }
+
+        /* BASIC STATS BOXES */
+        .facts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 35px;  }
+
+        .fact {
+            background-color: #121826;
+            border: 1px solid #2a344d;
+            padding: 15px;
+            width: 180px;
+            border-radius: 6px;
+            text-align: center;}
+
+        .fact h3 {
+            margin: 0;
+            color: #10b981;
+            font-size: 22px;  }
+
+        .fact p {
+            font-size: 12px;
+            color: #94a3b8;
+            margin: 5px 0 0 0; }
+
+        /* TWO COLUMN LAYOUT */
+        .two-column {
+            display: flex;
+            gap: 25px;
+            align-items: center;  }
+
+        .two-column > div {  flex: 1; }
+
+        .simple-box {
+            background-color: #121826;
+            border: 1px solid #2a344d;
+            padding: 20px;
+            border-radius: 6px;  }
+
+        .simple-box h3 {
+            color: #ffffff;
+            margin-top: 0; }
+
+        .simple-box p {
+            color: #cbd5e1;
+            font-size: 14px; }
+
+        .info-list {
+            background-color: #1a2238;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 15px;
+            margin-top: 15px; }
+
+        .info-list strong {
+            color: #f59e0b;
+            font-size: 13px;}
+
+        .info-list ul {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+            color: #cbd5e1;
+            font-size: 13px; }
+
+        .image-box img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #2a344d; }
+
+        /* TARGET 8.9 BOX */
+        .target-box {
+            background-color: #0d111e;
+            border: 1px solid #2a344d;
+            padding: 25px;
+            border-radius: 6px; }
+
+        .target-title {
+            color: #f59e0b;
+            font-size: 12px;
+            font-weight: bold; }
+
+        .target-box h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin: 10px 0;}
+
+        .three-boxes {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px; }
+
+        .small-box {
+            flex: 1;
+            background-color: #121826;
+            border: 1px solid #2a344d;
+            padding: 15px;
+            border-radius: 6px; }
+
+        .small-box h4 {
+            color: #10b981;
+            margin: 0 0 8px 0;}
+
+        .small-box p {
+            font-size: 12px;
+            color: #94a3b8;
+            margin: 0; }
+
+        /* PILLARS GRID */
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px; }
+
+        .pillar {
+            background-color: #121826;
+            border: 1px solid #2a344d;
+            border-radius: 6px;
+            overflow: hidden;}
+
+        .pillar img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 1px solid #2a344d;}
+
+        .pillar-content { padding: 18px; }
+
+        .number {
+            color: #f59e0b;
+            font-size: 11px;
+            font-weight: bold; }
+
+        .pillar h3 {
+            color: #ffffff;
+            margin: 6px 0;
+            font-size: 16px;  }
+
+        .pillar p {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 10px;}
+
+        .pillar-bottom {
+            color: #10b981;
+            font-size: 12px;
+            font-weight: bold;
+            border-top: 1px dashed #2a344d;
+            padding-top: 8px;}
+
+        /* SURVEY DATA */
+        .survey-results {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;}
+
+        .survey-card {
+            background-color: #0d111e;
+            border: 1px solid #2a344d;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;}
+
+        .percentage {
+            font-size: 28px;
+            font-weight: bold;
+            color: #10b981;}
+
+        .survey-card h3 {
+            color: #ffffff;
+            font-size: 14px;
+            margin: 8px 0;}
+
+        .survey-card p {
+            color: #94a3b8;
+            font-size: 12px;
+            margin: 0;}
+        /* FORM */
+        .survey-form {
+            background-color: #0d111e;
+            border: 1px solid #2a344d;
+            padding: 25px;
+            border-radius: 6px;
+            margin-top: 25px;}
+
+        .survey-form h3 {
+            color: #ffffff;
+            margin-top: 0;}
+
+        label {
+            color: #cbd5e1;
+            font-size: 13px;
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;}
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: #121826;
+            border: 1px solid #2a344d;
+            color: #ffffff;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;}
+
+        textarea { resize: vertical;}
+
+        button {
+            margin-top: 15px;
+            background-color: #10b981;
+            color: #0d111e;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;}
+
+        button:hover { background-color: #06b6d4;}
+
+        /* PLEDGE */
+        .pledge-box {
+            background-color: #121826;
+            border: 1px solid #2a344d;
+            padding: 25px;
+            border-radius: 6px;}
+
+        .pledge-item {
+            background-color: #0d111e;
+            border: 1px solid #2a344d;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            color: #cbd5e1;
+            font-size: 13px; }
+
+        .pledge-item input { margin-right: 10px;}
+
+        #pledgeMessage {
+            color: #10b981;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;}
+
+        /* FOOTER */
+        footer {
+            background-color: #0d111e;
+            border-top: 2px solid #2a344d;
+            text-align: center;
+            padding: 30px 20px;}
+
+        footer h3 {
+            color: #ffffff;
+            margin: 0 0 5px 0;
+            font-size: 16px;}
+
+        footer p {
+            color: #94a3b8;
+            font-size: 12px;
+            margin: 4px 0;}
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo"> SDG 8 <span>Student Project</span> </div>
+        <div class="subtitle"> TARGET 8.9 • SUSTAINABLE TOURISM </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sdgs">What are SDGs?</a>
+            <a href="#target">Target 8.9</a>
+            <a href="#pillars">4 Pillars</a>
+            <a href="#survey">Survey Findings</a>
+            <a href="#pledge">Eco Pledge</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="tag"> COLLEGE PROJECT PRESENTATION </div>
+        <h1>
+            Promote Beneficial &<br>
+            <span>Sustainable Tourism</span>
+        </h1>
+        <p>
+            A basic student research website exploring UN Sustainable Development Goal 8, focusing on how responsible tourism drives local economic growth, creates decent employment, and preserves natural culture.
+        </p>
+
+        <div class="buttons">
+            <a href="#target" class="button">Read Target 8.9 Info</a>
+            <a href="#survey" class="button dark">View Survey Data</a>
+        </div>
+
+        <div class="facts">
+            <div class="fact">
+                <h3>1 in 10</h3>
+                <p>Global Tourism Jobs</p>
+            </div>
+            <div class="fact">
+                <h3>17 Goals</h3>
+                <p>UN 2030 Agenda</p>
+            </div>
+            <div class="fact">
+                <h3>Target 8.9</h3>
+                <p>Tourism Focus</p>
+            </div>
+            <div class="fact">
+                <h3>100%</h3>
+                <p>Local Benefit Goal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: WHAT ARE SDGS -->
+    <section id="sdgs">
+        <div class="heading">
+            <span>SECTION 1 • BACKGROUND</span>
+            <h2>What are the UN Sustainable Development Goals?</h2>
+            <p>An introduction to the global roadmap for peace, prosperity, and environmental protection.</p>
+        </div>
+
+        <div class="two-column">
+            <div class="simple-box">
+                <h3>The 2030 Global Agenda</h3>
+                <p>In 2015, all 193 member countries of the United Nations adopted the 17 Sustainable Development Goals (SDGs).</p>
+                <p> These goals aim to solve major world challenges like poverty, inequality, climate change, and economic hardship by the year 2030.</p>
+
+                <div class="info-list">
+                    <strong>Key Facts for Students:</strong>
+                    <ul>
+                        <li>17 Goals covering social, economic, and environmental needs.</li>
+                        <li>169 Specific Targets to measure global progress.</li>
+                        <li>SDG 8 focuses directly on Decent Work and Economic Growth.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Sustainable Environment">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TARGET 8.9 -->
+    <div class="dark-section" id="target">
+        <section class="section-content">
+            <div class="heading">
+                <span>SECTION 2 • FOCUS AREA</span>
+                <h2>SDG Goal 8 & Target 8.9 Focus</h2>
+                <p>Understanding Decent Work, Economic Growth, and Sustainable Tourism.</p>
+            </div>
+
+            <div class="target-box">
+                <div class="target-title">TARGET 8.9 OFFICIAL STATEMENT</div>
+                <h3> "By 2030, devise and implement policies to promote sustainable tourism that creates jobs and promotes local culture and products."
+                </h3>
+                <p> Tourism is a major source of revenue for many developing regions and coastal communities. However, unsustainable tourism can lead to water pollution, cultural degradation, and low-wage jobs. Sustainable tourism ensures communities benefit directly without destroying their surroundings.
+                </p>
+
+                <div class="three-boxes">
+                    <div class="small-box">
+                        <h4>Local Income</h4>
+                        <p>Tourist spending directly supports local small family businesses and artisans.</p>
+                    </div>
+                    <div class="small-box">
+                        <h4>Decent Work</h4>
+                        <p>Tourism jobs should provide fair wages, safety, and equal work conditions.</p>
+                    </div>
+                    <div class="small-box">
+                        <h4>Eco Protection</h4>
+                        <p>Eco-tours help conserve forests, wildlife habitats, and historical sites.</p>
+                    </div> </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SECTION 3: 4 PILLARS -->
+    <section id="pillars">
+        <div class="heading">
+            <span>SECTION 3 • FRAMEWORK</span>
+            <h2>4 Key Pillars of Sustainable Tourism</h2>
+            <p>The fundamental building blocks required to make tourism responsible and fair.</p>
+        </div>
+
+        <div class="pillars">
+            <div class="pillar">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Local Market">
+                <div class="pillar-content">
+                    <div class="number">PILLAR 1</div>
+                    <h3>Local Economy Boost</h3>
+                    <p>Buying food from local markets and staying in family homestays keeps tourism revenue directly inside the community.</p>
+                    <div class="pillar-bottom">✓ Fair Wages & Local Goods</div>
+                </div>
+            </div>
+
+            <div class="pillar">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80" alt="Nature Protection">
+                <div class="pillar-content">
+                    <div class="number">PILLAR 2</div>
+                    <h3>Environmental Protection</h3>
+                    <p>Minimizing single-use plastic, conserving clean water, and using public transport reduces the environmental footprint.</p>
+                    <div class="pillar-bottom">✓ Reduce Waste & Emissions</div>
+                </div>
+            </div>
+
+            <div class="pillar">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Cultural Heritage">
+                <div class="pillar-content">
+                    <div class="number">PILLAR 3</div>
+                    <h3>Cultural Respect</h3>
+                    <p>Respecting sacred historical monuments, local traditions, dress codes, and indigenous customs when visiting.</p>
+                    <div class="pillar-bottom">✓ Respect Local Culture</div>
+                </div>
+            </div>
+
+            <div class="pillar">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" alt="Solar Resort">
+                <div class="pillar-content">
+                    <div class="number">PILLAR 4</div>
+                    <h3>Resource Efficiency</h3>
+                    <p>Hotels and lodges adopting green practices such as solar energy panels, rainwater harvesting, and waste recycling.</p>
+                    <div class="pillar-bottom">✓ Solar & Clean Energy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SURVEY DATA & FORM -->
+    <div class="dark-section" id="survey">
+        <section class="section-content">
+            <div class="heading">
+                <span>SECTION 4 • RESEARCH DATA</span>
+                <h2>Student Tourism Survey Insights</h2>
+                <p>Summary of data collected regarding local travel choices and eco-habits.</p>
+            </div>
+
+            <div class="survey-results">
+                <div class="survey-card">
+                    <div class="percentage">68%</div>
+                    <h3>Prefer Local Homestays</h3>
+                    <p>Students surveyed prefer staying in locally owned lodgings over large multinational chains.</p>
+                </div>
+
+                <div class="survey-card">
+                    <div class="percentage">82%</div>
+                    <h3>Support Plastic Reduction</h3>
+                    <p>Respondents carry their own reusable water bottles when traveling on eco-tours.</p>
+                </div>
+
+                <div class="survey-card">
+                    <div class="percentage">74%</div>
+                    <h3>Buy Local Souvenirs</h3>
+                    <p>Travelers prefer purchasing handmade craft items directly from local artisans.</p>
+                </div>
+            </div>
+
+            <div class="survey-form">
+                <h3>Share Your Travel Feedback</h3>
+                <p style="color:#94a3b8; font-size:13px;">Fill out this simple form for our student research data:</p>
+
+                <form onsubmit="submitSurvey(event)">
+                    <label for="studentName">Your Name</label>
+                    <input type="text" id="studentName" placeholder="Enter your full name" required>
+
+                    <label for="tourismAnswer">Is sustainable tourism important to you?</label>
+                    <select id="tourismAnswer" required>
+                        <option value="">-- Select Option --</option>
+                        <option value="Yes, very important">Yes, very important</option>
+                        <option value="Somewhat important">Somewhat important</option>
+                        <option value="Not a priority">Not a priority</option>
+                    </select>
+
+                    <label for="opinion">Your Opinion / Suggestion</label>
+                    <textarea id="opinion" rows="4" placeholder="Write a short comment on sustainable tourism..." required></textarea>
+
+                    <button type="submit">Submit Feedback</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- SECTION 5: ECO PLEDGE -->
+    <section id="pledge">
+        <div class="heading">
+            <span>SECTION 5 • TAKE ACTION</span>
+            <h2>Student Eco-Traveler Pledge</h2>
+            <p>Select your commitments to practice sustainable tourism on your next trip.</p>
+        </div>
+
+        <div class="pledge-box">
+            <div class="pledge-item">
+                <input type="checkbox" id="pledge1">
+                I pledge to support local small businesses, markets, and local tour guides.
+            </div>
+
+            <div class="pledge-item">
+                <input type="checkbox" id="pledge2">
+                I pledge to carry reusable water bottles and reduce single-use plastic waste.
+            </div>
+
+            <div class="pledge-item">
+                <input type="checkbox" id="pledge3">
+                I pledge to respect indigenous traditions, historic monuments, and wildlife habitats.
+            </div>
+
+            <button style="width:100%; margin-top:15px;" onclick="takePledge()">Confirm My Pledge</button>
+
+            <div id="pledgeMessage"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>SDG Goal 8 - Sustainable Tourism Project</h3>
+        <p>Created for Academic College Class Presentation on UN SDG Goal 8 (Target 8.9).</p>
+        <p>Built with basic HTML5, CSS3, and simple JavaScript.</p>
+    </footer>
+
+    <!--  JAVASCRIPT -->
+    <script>
+        // Simple Survey Submission Handler
+        function submitSurvey(event) {
+            event.preventDefault();
+            var name = document.getElementById("studentName").value;
+            var answer = document.getElementById("tourismAnswer").value;
+
+            alert("Thank you, " + name + "!\n\nYour feedback has been recorded.\nSelection: " + answer);
+            event.target.reset(); }
+
+        // Simple Eco-Pledge Handler
+        function takePledge() {
+            var p1 = document.getElementById("pledge1").checked;
+            var p2 = document.getElementById("pledge2").checked;
+            var p3 = document.getElementById("pledge3").checked;
+
+            if (p1 && p2 && p3) {
+                alert("Thank you for taking the Eco-Traveler Pledge!");
+                document.getElementById("pledgeMessage").innerHTML = "✓ Your Eco Pledge has been successfully confirmed!";} else {
+                alert("Please check all three pledge items to confirm.");} }
+    </script>
+
+</body>
+</html>
